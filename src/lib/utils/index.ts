@@ -2,14 +2,15 @@
 import {TApiOptions, TArea, TCategory, TUrls} from '../types/index'
 
 const apiUrlMapping = {
-  'meal-by-name': 'www.themealdb.com/api/json/v1/1/search.php?s=',
-  'meals-by-first-letter': 'www.themealdb.com/api/json/v1/1/search.php?f=',
-  'meal-details-by-id': 'www.themealdb.com/api/json/v1/1/lookup.php?i=',
-  'meal-random': 'www.themealdb.com/api/json/v1/1/random.php',
-  'meal-categories': 'www.themealdb.com/api/json/v1/1/list.php?c=list',
-  'meal-areas': 'www.themealdb.com/api/json/v1/1/list.php?a=list',
-  'meal-by-category': 'www.themealdb.com/api/json/v1/1/list.php?c=',
-  'meal-by-area': 'www.themealdb.com/api/json/v1/1/list.php?a=',
+  'meal-by-name': 'https://www.themealdb.com/api/json/v1/1/search.php?s=',
+  'meals-by-first-letter':
+    'https://www.themealdb.com/api/json/v1/1/search.php?f=',
+  'meal-details-by-id': 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=',
+  'meal-random': 'https://www.themealdb.com/api/json/v1/1/random.php',
+  'meal-categories': 'https://www.themealdb.com/api/json/v1/1/list.php?c=list',
+  'meal-areas': 'https://www.themealdb.com/api/json/v1/1/list.php?a=list',
+  'meal-by-category': 'https://www.themealdb.com/api/json/v1/1/list.php?c=',
+  'meal-by-area': 'https://www.themealdb.com/api/json/v1/1/list.php?a=',
 }
 
 export function getApiUrl(

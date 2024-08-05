@@ -9,14 +9,14 @@ export type TApiOptions =
   | 'meal-by-area'
 
 export type TUrls =
-  | `www.themealdb.com/api/json/v1/1/search.php?s=`
-  | `www.themealdb.com/api/json/v1/1/search.php?f=`
-  | `www.themealdb.com/api/json/v1/1/lookup.php?i=`
-  | `www.themealdb.com/api/json/v1/1/random.php`
-  | `www.themealdb.com/api/json/v1/1/list.php?c=list`
-  | `www.themealdb.com/api/json/v1/1/list.php?a=list`
-  | `www.themealdb.com/api/json/v1/1/list.php?c=`
-  | `www.themealdb.com/api/json/v1/1/list.php?a=`
+  | `https://www.themealdb.com/api/json/v1/1/search.php?s=`
+  | `https://www.themealdb.com/api/json/v1/1/search.php?f=`
+  | `https://www.themealdb.com/api/json/v1/1/lookup.php?i=`
+  | `https://www.themealdb.com/api/json/v1/1/random.php`
+  | `https://www.themealdb.com/api/json/v1/1/list.php?c=list`
+  | `https://www.themealdb.com/api/json/v1/1/list.php?a=list`
+  | `https://www.themealdb.com/api/json/v1/1/list.php?c=`
+  | `https://www.themealdb.com/api/json/v1/1/list.php?a=`
 
 export type TArea =
   | 'American'
