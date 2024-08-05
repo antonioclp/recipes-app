@@ -1,26 +1,15 @@
-import Link from 'next/link'
+import React from 'react'
 
-// Api.
-import {fetchApi} from '@/lib/api'
-
-// Interfaces.
-import {ICategory, IDefaultResponse} from '@/lib/interfaces'
+// Sub-components.
+import CategoryLink from './sub/CategoryLink'
+import AreaSelection from './sub/AreaSelection'
 
 const SearchOption = async (): Promise<JSX.Element> => {
-  const obj: IDefaultResponse = await fetchApi({option: 'meal-categories'})
-  const {meals} = obj.res as ICategory
-
   return (
-    <section>
-      <input />
-      {meals.map((c, index) => {
-        return (
-          <Link key={index} href={`/category/${c.strCategory.toLowerCase()}`}>
-            {c.strCategory}
-          </Link>
-        )
-      })}
-    </section>
+    <React.Fragment>
+      <CategoryLink />
+      <AreaSelection />
+    </React.Fragment>
   )
 }
 
