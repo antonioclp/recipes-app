@@ -10,7 +10,7 @@ export interface IFetchObject {
 
 export interface ICategory {
   meals: Array<{
-    srtCategory: string
+    strCategory: string
   }>
 }
 
