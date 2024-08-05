@@ -2,13 +2,18 @@
 import {getApiUrl} from '../utils'
 
 // Interfaces.
-import {IDefaultResponse, IFetchObject} from '../interfaces'
+import {
+  IDefaultResponse,
+  IFetchObject,
+  IMeal,
+  IMealByCategory,
+} from '../interfaces'
 
 export const fetchApi = async (
   object: IFetchObject,
 ): Promise<IDefaultResponse> => {
   let status = 0
-  const {option, areaParams, categoryParams} = object
+  const {option, areaParams, categoryParams, idParams} = object
 
   await new Promise((resolve) => setTimeout(resolve, 3000))
 
@@ -70,7 +75,7 @@ export const fetchApi = async (
       }
 
       status = response.status
-      const data = await response.json()
+      const data: IMeal = await response.json()
 
       return {
         message: 'sucessfully fetched.',
@@ -92,7 +97,51 @@ export const fetchApi = async (
       }
 
       status = response.status
-      const data = await response.json()
+      const data: IMealByCategory[] = await response.json()
+
+      return {
+        message: 'sucessfully fetched.',
+        status,
+        res: data,
+      }
+    }
+
+    if (option === 'meal-by-area' && areaParams) {
+      const url = getApiUrl(option, areaParams)
+
+      const response = await fetch(url, {
+        cache: 'no-cache',
+      })
+
+      if (!response.ok) {
+        status = response.status
+        throw new Error('ocurred a internal error.')
+      }
+
+      status = response.status
+      const data: IMeal[] = await response.json()
+
+      return {
+        message: 'sucessfully fetched.',
+        status,
+        res: data,
+      }
+    }
+
+    if (option === 'meal-details-by-id' && idParams) {
+      const url = getApiUrl(option, idParams)
+
+      const response = await fetch(url, {
+        cache: 'no-cache',
+      })
+
+      if (!response.ok) {
+        status = response.status
+        throw new Error('ocurred a internal error.')
+      }
+
+      status = response.status
+      const data: IMeal = await response.json()
 
       return {
         message: 'sucessfully fetched.',

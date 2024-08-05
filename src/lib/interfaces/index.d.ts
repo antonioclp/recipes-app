@@ -5,6 +5,7 @@ export interface IFetchObject {
   option: TApiOptions
   areaParams?: TArea
   categoryParams?: TCategory
+  idParams?: string
 }
 
 export interface ICategory {

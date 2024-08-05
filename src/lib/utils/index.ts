@@ -15,7 +15,7 @@ const apiUrlMapping = {
 
 export function getApiUrl(
   option: TApiOptions,
-  queryParam?: TArea | TCategory,
+  queryParam?: TArea | TCategory | string,
 ): TUrls {
   const baseUrl = apiUrlMapping[option]
   if (
