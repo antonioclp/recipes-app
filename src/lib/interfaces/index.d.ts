@@ -14,6 +14,12 @@ export interface ICategory {
   }>
 }
 
+export interface IArea {
+  meals: Array<{
+    strArea: string
+  }>
+}
+
 export interface IMeal {
   meal: {
     idMeal: string
@@ -69,15 +75,15 @@ export interface IMeal {
 }
 
 export interface IMealByCategory {
-  meals: Array<{
+  meals: {
     strMeal: string
     strMealThumb: string
     idMeal: string
-  }>
+  }
 }
 
 export interface IDefaultResponse {
   message: string
   status: number
-  res: IMealByCategory | IMeal[] | IMeal | ICategory | null
+  res: IMealByCategory[] | IMeal[] | IMeal | ICategory | IArea | null
 }

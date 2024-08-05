@@ -98,7 +98,7 @@ export const fetchApi = async (
       }
 
       status = response.status
-      const data: IMealByCategory = await response.json()
+      const data: IMealByCategory[] = await response.json()
 
       return {
         message: 'sucessfully fetched.',
