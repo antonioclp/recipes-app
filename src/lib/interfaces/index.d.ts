@@ -9,9 +9,9 @@ export interface IFetchObject {
 }
 
 export interface ICategory {
-  meals: {
+  meals: Array<{
     srtCategory: string
-  }
+  }>
 }
 
 export interface IMeal {
@@ -69,15 +69,15 @@ export interface IMeal {
 }
 
 export interface IMealByCategory {
-  meals: {
+  meals: Array<{
     strMeal: string
     strMealThumb: string
     idMeal: string
-  }
+  }>
 }
 
 export interface IDefaultResponse {
   message: string
   status: number
-  res: IMealByCategory[] | IMeal[] | IMeal | ICategory[] | null
+  res: IMealByCategory | IMeal[] | IMeal | ICategory | null
 }
