@@ -1,8 +1,10 @@
-import {TApiOptions} from '../types'
+// Types.
+import {TApiOptions, TArea, TCategory} from '../types'
 
 export interface IFetchObject {
   option: TApiOptions
-  queryParams?: string
+  areaParams?: TArea
+  categoryParams?: TCategory
 }
 
 export interface ICategory {
@@ -65,8 +67,16 @@ export interface IMeal {
   }
 }
 
+export interface IMealByCategory {
+  meals: {
+    strMeal: string
+    strMealThumb: string
+    idMeal: string
+  }
+}
+
 export interface IDefaultResponse {
   message: string
   status: number
-  res: IMeal[] | IMeal | ICategory[] | null
+  res: IMealByCategory[] | IMeal[] | IMeal | ICategory[] | null
 }

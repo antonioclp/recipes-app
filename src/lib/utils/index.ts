@@ -9,8 +9,8 @@ const apiUrlMapping = {
   'meal-random': 'https://www.themealdb.com/api/json/v1/1/random.php',
   'meal-categories': 'https://www.themealdb.com/api/json/v1/1/list.php?c=list',
   'meal-areas': 'https://www.themealdb.com/api/json/v1/1/list.php?a=list',
-  'meal-by-category': 'https://www.themealdb.com/api/json/v1/1/list.php?c=',
-  'meal-by-area': 'https://www.themealdb.com/api/json/v1/1/list.php?a=',
+  'meal-by-category': 'https://www.themealdb.com/api/json/v1/1/filter.php?c=',
+  'meal-by-area': 'https://www.themealdb.com/api/json/v1/1/filter.php?a=',
 }
 
 export function getApiUrl(
@@ -21,8 +21,8 @@ export function getApiUrl(
   if (
     baseUrl.endsWith('search.php?f=') ||
     baseUrl.endsWith('lookup.php?i=') ||
-    baseUrl.endsWith('list.php?c=') ||
-    baseUrl.endsWith('list.php?a=')
+    baseUrl.endsWith('filter.php?c=') ||
+    baseUrl.endsWith('filter.php?a=')
   ) {
     return `${baseUrl}${queryParam}` as TUrls
   }
