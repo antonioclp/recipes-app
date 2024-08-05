@@ -1,5 +1,5 @@
 // Types.
-import {TApiOptions, TArea, TUrls} from '../types/index'
+import {TApiOptions, TArea, TCategory, TUrls} from '../types/index'
 
 const apiUrlMapping = {
   'meal-by-name': 'www.themealdb.com/api/json/v1/1/search.php?s=',
@@ -12,7 +12,10 @@ const apiUrlMapping = {
   'meal-by-area': 'www.themealdb.com/api/json/v1/1/list.php?a=',
 }
 
-export function getApiUrl(option: TApiOptions, queryParam?: TArea): TUrls {
+export function getApiUrl(
+  option: TApiOptions,
+  queryParam?: TArea | TCategory,
+): TUrls {
   const baseUrl = apiUrlMapping[option]
   if (
     baseUrl.endsWith('search.php?f=') ||
