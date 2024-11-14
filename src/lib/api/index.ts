@@ -3,6 +3,7 @@ import {getApiUrl} from '../utils'
 
 // Interfaces.
 import {
+  ICategory,
   IDefaultResponse,
   IFetchObject,
   IMeal,
@@ -31,7 +32,7 @@ export const fetchApi = async (
       }
 
       status = response.status
-      const data = await response.json()
+      const data: ICategory = await response.json()
 
       return {
         message: 'sucessfully fetched.',
